@@ -1,0 +1,33 @@
+        private int[,] acum;
+        public void Cargar()
+        {
+            //acum = new int[10];
+            Console.Write("Filas de la matriz: ");
+            string linea;
+            linea = Console.ReadLine();
+            int filas = int.Parse(linea);
+            Console.Write("Columnas de la matriz: ");
+            linea = Console.ReadLine();
+            int columnas = int.Parse(linea);
+
+            acum = new int[filas, columnas];
+
+            for (int f = 0; f < acum.GetLength(0); f++)
+            {
+                for (int c = 0; c < acum.GetLength(1); c++)
+                {
+                    acum[f, c] = int.Parse(linea) + f + c;
+                }
+            }
+            
+        }
+        public void Imprimir()
+        {
+            Console.Write("Ingresa el tamaño del arreglo: \n");
+            for (int f = 1; f <= 5; f++)
+            {
+                Console.Write(acum[f]);
+            }
+
+            Console.ReadKey();
+        }
